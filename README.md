@@ -13,3 +13,10 @@ or Yarn :
 yarn install
 yarn start
 ```
+
+default port is 8000, it can be changed using the PORT environment
+variable :
+
+```
+PORT=8080 npm start
+```

@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+var PORT = process.env.PORT || 8000;
+
 var asserver = express();
 
 // express middleware to decode Adeunis payload
@@ -65,6 +67,6 @@ asserver.post("/fluxon", bodyParser.json(), decodeAdeunisRF, function(req, res) 
 });
 
 // Start listening
-asserver.listen(8080, function() {
-  console.log("server started on port 8080");
+asserver.listen(PORT, function() {
+  console.log("server started on port "+PORT);
 });
