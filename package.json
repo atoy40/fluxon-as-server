@@ -1,0 +1,14 @@
+{
+  "name": "fluxon-as-server",
+  "version": "0.0.1",
+  "description": "Simple fluxon AS server decoding Adeunis RF data",
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "author": "Anthony Hinsinger <anthony.hinsinger@univ-pau.fr>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
