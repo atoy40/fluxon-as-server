@@ -1,6 +1,11 @@
 // express middleware to decode Adeunis payload
 module.exports = function(req, res, next) {
 
+  // adeunis must send to lorawan fport 26 to be decoded.
+  if (!req.body || req.body.fPort != 26) {
+    next();
+  }
+
   var payload = req.body.frmPayload;
 
   var ret = {};
@@ -16,7 +21,7 @@ module.exports = function(req, res, next) {
   var rssi_is_present = status & 0x01;
 
   ret.temp = payload[1];
-  ret.btn1 = btn1_is_present;
+  ret.btn1 = !!btn1_is_present;
 
   if (gps_is_present) {
     shift = 8

@@ -8,9 +8,7 @@ var asserver = express();
 
 // handle POST requests on /fluxon
 asserver.post("/fluxon", bodyParser.json(), decodeAdeunisRF, function(req, res) {
-  console.log(req.body.frmPayload);
-  console.log(req.body.decodedPayload);
-
+  console.log(req.body);
   res.end();
 });
 
